@@ -1,0 +1,11 @@
+.topic {
+  margin-bottom: 20rpx;
+}
+
+.topic-title {
+  font-weight: 600;
+}
+
+.quote {
+  margin-bottom: 16rpx;
+}

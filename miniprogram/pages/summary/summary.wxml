@@ -1,0 +1,27 @@
+<view class="container" wx:if="{{summary}}">
+  <view class="card">
+    <view class="card-title">📌 今日话题</view>
+    <view class="topic" wx:for="{{summary.topics}}" wx:key="title">
+      <view class="topic-title">{{item.title}}</view>
+      <view class="muted">{{item.detail}}</view>
+    </view>
+  </view>
+
+  <view class="card" wx:if="{{summary.todos.length}}">
+    <view class="card-title">✅ 结论与待办</view>
+    <view wx:for="{{summary.todos}}" wx:key="*this">· {{item}}</view>
+  </view>
+
+  <view class="card" wx:if="{{summary.quotes.length}}">
+    <view class="card-title">💬 金句摘录</view>
+    <view class="quote" wx:for="{{summary.quotes}}" wx:key="text">
+      “{{item.text}}” <text class="muted">—— {{item.speaker}}</text>
+    </view>
+  </view>
+
+  <button class="btn-primary" open-type="share">分享回群</button>
+</view>
+
+<view class="container" wx:else>
+  <view class="card muted">暂无总结，请先在首页上传群聊截图。</view>
+</view>

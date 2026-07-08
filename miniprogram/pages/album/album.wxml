@@ -1,0 +1,17 @@
+<view class="container">
+  <view class="card muted">
+    群相册会自动把截图中群友分享的照片抠出并按事件聚类，每张配上结合聊天语境的一句话描述。
+  </view>
+
+  <view class="card" wx:for="{{clusters}}" wx:for-item="cluster" wx:for-index="ci" wx:key="name">
+    <view class="card-title">{{cluster.name}}</view>
+    <view class="photo-grid">
+      <view class="photo" wx:for="{{cluster.photos}}" wx:key="caption"
+            data-cluster="{{ci}}" data-index="{{index}}" bindtap="previewPhoto">
+        <image wx:if="{{item.url}}" src="{{item.url}}" mode="aspectFill" />
+        <view wx:else class="photo-placeholder">📷</view>
+        <view class="caption muted">{{item.caption}}</view>
+      </view>
+    </view>
+  </view>
+</view>

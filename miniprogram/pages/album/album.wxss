@@ -1,0 +1,29 @@
+.photo-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16rpx;
+}
+
+.photo {
+  width: 200rpx;
+}
+
+.photo image,
+.photo-placeholder {
+  width: 200rpx;
+  height: 200rpx;
+  border-radius: 16rpx;
+  background: #f0f1f3;
+}
+
+.photo-placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 56rpx;
+}
+
+.caption {
+  font-size: 24rpx;
+  margin-top: 8rpx;
+}

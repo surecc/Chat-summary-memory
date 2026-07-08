@@ -1,0 +1,7 @@
+<view class="container">
+  <view class="card" wx:for="{{entries}}" wx:key="key" data-key="{{item.key}}" bindtap="openEntry">
+    <view class="card-title">{{item.title}}</view>
+    <view class="muted">{{item.desc}}</view>
+    <view class="badge muted" wx:if="{{!item.ready}}">回忆积累中…</view>
+  </view>
+</view>

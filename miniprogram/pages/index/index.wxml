@@ -1,0 +1,25 @@
+<view class="container">
+  <view class="card">
+    <view class="card-title">上传群聊截图</view>
+    <view class="muted">在群里长按消息多选截图，或逐张截屏后从相册选择。AI 会重建对话时间线并生成总结。</view>
+
+    <view class="grid">
+      <view class="thumb" wx:for="{{images}}" wx:key="*this">
+        <image src="{{item}}" mode="aspectFill" />
+        <view class="thumb-remove" data-index="{{index}}" bindtap="removeImage">×</view>
+      </view>
+      <view class="thumb thumb-add" bindtap="chooseScreenshots" wx:if="{{images.length < maxCount}}">＋</view>
+    </view>
+
+    <button class="btn-primary" disabled="{{images.length === 0 || parsing}}" bindtap="startParse">
+      {{parsing ? '解析中…' : '生成总结'}}
+    </button>
+  </view>
+
+  <view class="card">
+    <view class="card-title">你会得到什么</view>
+    <view>· 今日话题 TOP3 与结论待办</view>
+    <view>· 群相册：自动整理截图里的照片</view>
+    <view>· 珍贵回忆小结：可分享回群的回忆卡片</view>
+  </view>
+</view>
