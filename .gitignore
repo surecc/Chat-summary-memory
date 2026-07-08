@@ -16,3 +16,8 @@ project.private.config.json
 .env
 .env.*
 *.key
+
+# Python
+__pycache__/
+*.pyc
+messages.db
